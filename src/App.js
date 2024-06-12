@@ -24,6 +24,10 @@ const Header = styled.header`
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  // @media only screen and (min-width: 960px) {
+
+  // }
 `;
 
 export default App;
