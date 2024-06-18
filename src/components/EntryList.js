@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios'
 import styled from 'styled-components';
 import { Entry } from './Entry';
+import { FormButton } from './form-components';
 
 export const EntryList = () => {
     const [ entries, setEntries ] = useState([]);
@@ -17,22 +18,13 @@ export const EntryList = () => {
 
     return (
         <>
-            <FetchButton onClick={fetchEntries}>Get Past Entries</FetchButton>
+            <FormButton handler={fetchEntries} label='Get Past Entries' />
             <EntryListContainer>
-                { entries && entries.map(entry => <Entry entry={entry} />)}
+                { entries && entries.map(entry => <Entry key={entry.id} entry={entry} />)}
             </EntryListContainer>
         </>
     )
 }
-
-const FetchButton = styled.button`
-    color: #BF4F74;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 0.125rem solid #BF4F74;
-    border-radius: 0.1875rem;
-`;
 
 const EntryListContainer = styled.div`
     display: flex;
