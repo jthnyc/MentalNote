@@ -6,7 +6,7 @@ function App() {
 
   return (
     <AppWrapper>
-      <Header></Header>
+      <header></header>
       <EntryForm />
       <EntryList />
     </AppWrapper>
@@ -14,10 +14,9 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-  text-align: center;
-`;
-
-const Header = styled.header`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default App;
